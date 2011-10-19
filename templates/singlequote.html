@@ -2,7 +2,7 @@
 {% block content %}
     <div class="quote">
         <div class ="quote-text">
-            <a href="/id/{{ quote.id}}">#{{ quote.id }}</a> {{ quote.quote }}
+            <a href="{{ url_for('single_quote', id=quote.id)}}">#{{ quote.id }}</a> {{ quote.quote }}
         </div>
     </div>
 {% endblock %}
