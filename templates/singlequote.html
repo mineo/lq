@@ -1,0 +1,8 @@
+{% extends "base.html" %}
+{% block content %}
+    <div class="quote">
+        <div class ="quote-text">
+            <a href="/id/{{ quote.id}}">#{{ quote.id }}</a> {{ quote.quote }}
+        </div>
+    </div>
+{% endblock %}
