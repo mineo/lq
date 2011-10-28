@@ -1,5 +1,5 @@
 {% extends "base.html" %}
-
+{% import "quote.html" as quoted %}
 {% macro render_pagination(pagination) %}
   <div class=pagination>
       {% if pagination.has_prev %}
@@ -25,11 +25,7 @@
 {% block content %}
     {{ render_pagination (pagination) }}
     {% for quote in quotes %}
-
-    <div class ="quote {{ loop.cycle('odd', 'even') }}">
-        <a href="{{ url_for('single_quote', id=quote.id )}}">#{{ quote.id }}</a> {{ quote.quote }}
-    </div>
+        {{ quoted.display_quote(quote, loop.cycle('odd', 'even')) }}
     {% endfor %}
-
     {{ render_pagination (pagination) }}
 {% endblock %}

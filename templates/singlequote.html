@@ -1,8 +1,5 @@
 {% extends "base.html" %}
+{% import "quote.html" as quoted %}
 {% block content %}
-    <div class="quote">
-        <div class ="quote-text">
-            <a href="{{ url_for('single_quote', id=quote.id)}}">#{{ quote.id }}</a> {{ quote.quote }}
-        </div>
-    </div>
+    {{ quoted.display_quote(quote, "") }}
 {% endblock %}

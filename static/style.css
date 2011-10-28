@@ -26,11 +26,12 @@ body {
     color: #FF9A52;
 }
 
-#content a{
-    color: #9b3510;
+#content a:hover {
+    color: #9B3510 !important;
+    border-bottom: 1px dotted #9B3510;
 }
+
 .quote {
-    /*padding: 8px 8px;*/
     margin: 0px 5px;
     border-bottom: 1px dotted #EFD9B4;
     font-family: Vollkorn;
@@ -57,19 +58,21 @@ body {
 }
 
 .pagination a:hover {
-    color: #000000;
+    color: #000000 !important;
 }
 
+.vote-arrow {
+    float: right;
+}
 
-.quote a {
+.vote-arrow, .quote a {
+    color: #EFD9B4;
     font-size: 28pt;
     font-weight: bold;
-    color: #EFD9B4 !important;
 }
 
-.quote a:hover {
+.vote-arrow:hover, .quote a:hover {
     color: #9B3510 !important;
-    border-bottom: 1px dotted #9B3510;
 }
 
 a {
