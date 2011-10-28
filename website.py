@@ -63,7 +63,7 @@ app.jinja_env.globals['url_for_other_page'] = url_for_other_page
 
 if __name__ == '__main__':
     # Use this to get the server to listen on a public interface:
-    http_server = WSGIServer(('q150', 5000), app)
+    http_server = WSGIServer(('10.8.0.10', 5000), app)
     http_server.serve_forever()
     # Or this for localhost:
     #app.run()
