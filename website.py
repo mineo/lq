@@ -24,13 +24,13 @@ def teardown_request(exception):
     g.db.close()
 
 def get_quotes_for_page(page, PER_PAGE=25):
-    return g.db.execute("select quote, rowid from quotes limit (?) offset (?)",
+    return g.db.execute("select quote, rowid from quote limit (?) offset (?)",
             [PER_PAGE, (page - 1 ) * PER_PAGE])
 
 @app.route("/quotes/", defaults = {"page": 1})
 @app.route("/quotes/<int:page>")
 def all(page):
-    num_quotes = g.db.execute("select count(rowid) from quotes;").fetchone()[0]
+    num_quotes = g.db.execute("select count(rowid) from quote;").fetchone()[0]
     p = Pagination(page, 25, num_quotes)
     quotes = [dict(quote=row[0], id=row[1]) for row in
             get_quotes_for_page(page, 25)]
@@ -38,14 +38,14 @@ def all(page):
 
 @app.route("/random")
 def random_quote():
-    row = g.db.execute("SELECT rowid, quote FROM quotes\
+    row = g.db.execute("SELECT rowid, quote FROM quote\
             ORDER BY random() LIMIT 1;").fetchall()[0]
     quote = dict(id=row[0], quote=row[1])
     return render_template("singlequote.html", quote=quote)
 
 @app.route("/quote/<int:id>")
 def single_quote(id):
-    row = g.db.execute("SELECT rowid, quote FROM quotes\
+    row = g.db.execute("SELECT rowid, quote FROM quote\
             WHERE rowid = (?)", [id]).fetchall()[0]
     quote = dict(id=row[0], quote=row[1])
     return render_template("singlequote.html", quote=quote)

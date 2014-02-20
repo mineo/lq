@@ -61,17 +61,13 @@ body {
     color: #000000 !important;
 }
 
-.vote-arrow {
-    float: right;
-}
-
-.vote-arrow, .quote a {
+.quote a {
     color: #EFD9B4;
     font-size: 28pt;
     font-weight: bold;
 }
 
-.vote-arrow:hover, .quote a:hover {
+.quote a:hover {
     color: #9B3510 !important;
 }
 
