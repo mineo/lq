@@ -24,10 +24,10 @@
 
 {% block content %}
     {{ render_pagination (pagination) }}
-    <ul>
+    <ol>
         {% for quote in quotes %}
             {{ quoted.display_quote(quote) }}
         {% endfor %}
-    </ul>
+    </ol>
     {{ render_pagination (pagination) }}
 {% endblock %}
