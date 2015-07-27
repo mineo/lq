@@ -1,12 +1,12 @@
-#!/usr/bin/env python2
+#!/usr/bin/python
 import sqlite3
 import os.path
 
 from flask import Flask, g, render_template, request, url_for
-from gevent.wsgi import WSGIServer
+#from gevent.wsgi import WSGIServer
 from pagination import Pagination
 
-DATABASE = os.path.join(os.path.expanduser("~/.lala"), "quotes.sqlite3")
+DATABASE = "quotes.sqlite3" #os.path.join(os.path.expanduser("~/.lala"), "quotes.sqlite3")
 DEBUG = True
 
 app = Flask(__name__)
@@ -63,7 +63,7 @@ app.jinja_env.globals['url_for_other_page'] = url_for_other_page
 
 if __name__ == '__main__':
     # Use this to get the server to listen on a public interface:
-    http_server = WSGIServer(('10.8.0.10', 5000), app)
-    http_server.serve_forever()
+    #http_server = WSGIServer(('10.8.0.10', 5000), app)
+    #http_server.serve_forever()
     # Or this for localhost:
-    #app.run()
+    app.run()

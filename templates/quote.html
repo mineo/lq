@@ -1,7 +1,8 @@
 {% macro display_quote(quote, class) %}
-<a class="vote-arrow">⬆</a>
-<a class="vote-arrow">⬇</a>
-    <div class ="quote {{ class }}">
-        <a href="{{ url_for('single_quote', id=quote.id )}}">#{{ quote.id }}</a> {{ quote.quote }}
-    </div>
+<li data-quote-id="{{ quote.id }}">
+    <a href="{{ url_for('single_quote', id=quote.id )}}">#{{ quote.id }}</a>
+    <span>{{ quote.quote }}</span>
+    <a class="vote-arrow down">&#9660;</a>
+    <a class="vote-arrow up">&#9650;</a>
+</li>
 {% endmacro %}

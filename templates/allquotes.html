@@ -1,31 +1,33 @@
 {% extends "base.html" %}
 {% import "quote.html" as quoted %}
 {% macro render_pagination(pagination) %}
-  <div class=pagination>
-      {% if pagination.has_prev %}
-          <a href="{{ url_for_other_page(pagination.page - 1) }}">&laquo;</a>
-      {% endif %}
-      {%- for page in pagination.iter_pages() %}
-          {% if page %}
-              {% if page != pagination.page %}
-                  <a href="{{ url_for_other_page(page) }}" title="Page {{page}}">∙</a>
-              {% else %}
-                  ∙
-              {% endif %}
-          {% else %}
-              <span class=ellipsis>…</span>
-          {% endif %}
-      {%- endfor %}
-      {% if pagination.has_next %}
-          <a href="{{ url_for_other_page(pagination.page + 1)}}">&raquo;</a>
-      {% endif %}
-  </div>
+    <div class="pagination">
+        {% if pagination.has_prev %}
+            <a href="{{ url_for_other_page(pagination.page - 1) }}">&laquo;</a>
+        {% endif %}
+        {%- for page in pagination.iter_pages() %}
+            {% if page %}
+                {% if page != pagination.page %}
+                    <a href="{{ url_for_other_page(page) }}" title="Page {{page}}">{{ page }}</a>
+                {% else %}
+                    {{ page }}
+                {% endif %}
+            {% else %}
+                <span class=ellipsis>…</span>
+            {% endif %}
+        {%- endfor %}
+        {% if pagination.has_next %}
+            <a href="{{ url_for_other_page(pagination.page + 1)}}">&raquo;</a>
+        {% endif %}
+     </div>
 {% endmacro %}
 
 {% block content %}
     {{ render_pagination (pagination) }}
-    {% for quote in quotes %}
-        {{ quoted.display_quote(quote, loop.cycle('odd', 'even')) }}
-    {% endfor %}
+    <ul>
+        {% for quote in quotes %}
+            {{ quoted.display_quote(quote) }}
+        {% endfor %}
+    </ul>
     {{ render_pagination (pagination) }}
 {% endblock %}

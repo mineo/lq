@@ -1,22 +1,30 @@
 <!DOCTYPE html>
 <html>
-<head>
-    <title>blubb</title>
-    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
-    <link href='http://fonts.googleapis.com/css?family=Vollkorn:400,700' rel='stylesheet' type='text/css'>
-</head>
-<body>
-    {%- block header %}
-        {% include "navbar.html" %}
-    {%- endblock %}
-    <div id="content">
-        {%- block content %}
-        {%- endblock %}
-    </div>
-    <div id="footer">
-        {%- block footer %}
-            {% include "footer.html" %}
-        {%- endblock %}
-    </div>
-</body>
+    <head>
+        <title>blubb</title>
+        <meta charset="utf-8">
+
+        <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
+        <link href='http://fonts.googleapis.com/css?family=Vollkorn:400,700' rel='stylesheet' type='text/css'>
+        <link href='http://fonts.googleapis.com/css?family=Roboto:400,400italic,700,700italic' rel='stylesheet' type='text/css'>
+    </head>
+
+    <body>
+        <header>
+            {%- block header %}
+                {% include "navbar.html" %}
+            {%- endblock %}
+        </header>
+
+        <article>
+            {%- block content %}
+            {%- endblock %}
+        </article>
+
+        <footer>
+            {%- block footer %}
+                {% include "footer.html" %}
+            {%- endblock %}
+        </footer>
+    </body>
 </html>
