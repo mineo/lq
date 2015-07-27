@@ -60,8 +60,8 @@ header hr
     border-top: 3px solid $color4
     border-bottom: 3px solid $color3
 
-body > article
-    & > ul > li
+body > main
+    & > ol > li
         @include clearfix
 
         padding: 5px 10px
@@ -84,7 +84,7 @@ body > article
             font-size: 1.4em
             vertical-align: -2px
 
-        &:nth-child(odd)
+        &:nth-child(even)
             background: lighten($color2, 5%)
 
     a

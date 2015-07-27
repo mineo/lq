@@ -1,5 +1,7 @@
 {% extends "base.html" %}
 {% import "quote.html" as quoted %}
 {% block content %}
-    {{ quoted.display_quote(quote, "") }}
+    <ol>
+        {{ quoted.display_quote(quote, "") }}
+    </ol>
 {% endblock %}

@@ -30,33 +30,33 @@ header hr {
   border-top: 3px solid #4d6160;
   border-bottom: 3px solid #a39081; }
 
-body > article > ul > li {
+body > main > ol > li {
   padding: 5px 10px;
   font-size: 1.2em; }
-  body > article > ul > li:before, body > article > ul > li:after {
+  body > main > ol > li:before, body > main > ol > li:after {
     content: " ";
     display: table; }
-  body > article > ul > li:after {
+  body > main > ol > li:after {
     clear: both; }
-  body > article > ul > li span {
+  body > main > ol > li span {
     float: left;
     display: block;
     margin: 0 10px;
     padding: 5px 0;
     width: calc(100% - 120px); }
-  body > article > ul > li a {
+  body > main > ol > li a {
     float: left;
     display: block;
     height: 100%; }
-  body > article > ul > li a:first-child {
+  body > main > ol > li a:first-child {
     font-size: 1.4em;
     vertical-align: -2px; }
-  body > article > ul > li:nth-child(odd) {
+  body > main > ol > li:nth-child(even) {
     background: #ddb5a5; }
-body > article a {
+body > main a {
   color: #4d6160;
   text-decoration: none; }
-body > article a:hover {
+body > main a:hover {
   color: #a39081;
   text-decoration: underline; }
 
