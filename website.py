@@ -54,6 +54,10 @@ def single_quote(id):
 def home():
     return render_template("index.html")
 
+@app.route("/live")
+def live():
+    return render_template("live.html")
+
 def url_for_other_page(page):
     args = request.view_args.copy()
     args['page'] = page

@@ -7,7 +7,7 @@ body {
   font-size: 14px;
   font-family: "Liberation Sans", Roboto, Helvetica, Arial, sans-serif;
   color: #292522;
-  background-color: #efd9b4; }
+  background-color: #EFD9B4; }
 
 nav, footer {
   padding: 10px 0;
@@ -17,47 +17,47 @@ nav, footer {
   nav a, footer a {
     margin: 0 10px;
     display: inline-block;
-    color: #d6a692;
+    color: #D6A692;
     text-decoration: none; }
   nav a:hover, footer a:hover {
-    color: #efd9b4;
+    color: #EFD9B4;
     text-decoration: underline; }
 
 header hr {
   width: 100%;
   height: 6px;
   border: none;
-  border-top: 3px solid #4d6160;
-  border-bottom: 3px solid #a39081; }
+  border-top: 3px solid #4D6160;
+  border-bottom: 3px solid #A39081; }
 
-body > main > ol > li {
+body > main > ol, body > main ul > li {
   padding: 5px 10px;
   font-size: 1.2em; }
-  body > main > ol > li:before, body > main > ol > li:after {
+  body > main > ol:before, body > main > ol:after, body > main ul > li:before, body > main ul > li:after {
     content: " ";
     display: table; }
-  body > main > ol > li:after {
+  body > main > ol:after, body > main ul > li:after {
     clear: both; }
-  body > main > ol > li span {
+  body > main > ol span, body > main ul > li span {
     float: left;
     display: block;
     margin: 0 10px;
     padding: 5px 0;
     width: calc(100% - 120px); }
-  body > main > ol > li a {
+  body > main > ol a, body > main ul > li a {
     float: left;
     display: block;
     height: 100%; }
-  body > main > ol > li a:first-child {
+  body > main > ol a:first-child, body > main ul > li a:first-child {
     font-size: 1.4em;
     vertical-align: -2px; }
-  body > main > ol > li:nth-child(even) {
+  body > main > ol:nth-child(even), body > main ul > li:nth-child(even) {
     background: #ddb5a5; }
 body > main a {
-  color: #4d6160;
+  color: #4D6160;
   text-decoration: none; }
 body > main a:hover {
-  color: #a39081;
+  color: #A39081;
   text-decoration: underline; }
 
 .pagination {
@@ -67,7 +67,7 @@ body > main a:hover {
 
 .vote-arrow {
   float: right;
-  color: #4d6160;
+  color: #4D6160;
   font-size: 1.3em;
   cursor: pointer; }
   .vote-arrow:hover {
