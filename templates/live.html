@@ -1,0 +1,9 @@
+{% extends "base.html" %}
+{% block scripts %}
+<script src="{{ url_for('static', filename='live.js') }}">
+</script>
+{% endblock %}
+{% block content %}
+<ul id="live-messages">
+</ul>
+{% endblock %}
